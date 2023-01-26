@@ -77,10 +77,9 @@ const Login: React.FC = () => {
       }),
       shallow
     );
-  const { isAuthenticated, setIsAuthenticated, authData, setAuthData } =
+  const { setIsAuthenticated, authData, setAuthData } =
     LoginStore.useLoginPersistStore(
       (state) => ({
-        isAuthenticated: state.isAuthenticated,
         authData: state.authData,
         setIsAuthenticated: state.setIsAuthenticated,
         setAuthData: state.setAuthData,
