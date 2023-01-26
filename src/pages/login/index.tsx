@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react';
-import { getAdmin, getDoctor, getPatient } from '../../services/express';
 import Container from '../../components/Container';
 import clsx from 'clsx';
 import Text from '../../components/Text/Text';
+import { getAdmin, getDoctor, getPatient } from '../../services/express';
 import LoginStore from '../../store/login';
 import { shallow } from 'zustand/shallow';
 import Input from '../../components/Input';
@@ -126,6 +126,7 @@ const Login: React.FC = () => {
           role: adminData?.role,
           govId: adminData?.govId,
           name: adminData?.name,
+          email: adminData?.email,
           password: adminData?.password,
         });
         setError('');
@@ -141,6 +142,7 @@ const Login: React.FC = () => {
           role: patientData?.role,
           govId: patientData?.govId,
           name: patientData?.name,
+          email: patientData?.email,
           password: patientData?.password,
         });
         setError('');
@@ -156,6 +158,7 @@ const Login: React.FC = () => {
           role: doctorData?.role,
           govId: doctorData?.govId,
           name: doctorData?.name,
+          email: doctorData?.email,
           password: doctorData?.password,
         });
         setError('');

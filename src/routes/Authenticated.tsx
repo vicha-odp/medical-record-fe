@@ -7,6 +7,12 @@ import { shallow } from 'zustand/shallow';
 const DashboardAdminPage = loadable(
   () => import('../pages/dashboard/DashboardAdmin')
 );
+const ListAdminPage = loadable(() => import('../pages/listData/ListAdmin'));
+const ListPatientPage = loadable(() => import('../pages/listData/ListPatient'));
+const ListDoctorPage = loadable(() => import('../pages/listData/ListDoctor'));
+const ListMedicalRecordPage = loadable(
+  () => import('../pages/listData/ListMedicalRecord')
+);
 const Layout = loadable(() => import('../layout/Page'));
 
 const Authenticated: React.FC = () => {
@@ -35,25 +41,12 @@ const Authenticated: React.FC = () => {
             path="/dashboard/admin"
             element={<DashboardAdminPage />}
           />
+          <Route path="/dashboard/listAdmin" element={<ListAdminPage />} />
+          <Route path="/dashboard/listPatient" element={<ListPatientPage />} />
+          <Route path="/dashboard/listDoctor" element={<ListDoctorPage />} />
           <Route
-            index
-            path="/dashboard/listAdmin"
-            element={<DashboardAdminPage />}
-          />
-          <Route
-            index
-            path="/dashboard/listPatient"
-            element={<DashboardAdminPage />}
-          />
-          <Route
-            index
-            path="/dashboard/listDoctor"
-            element={<DashboardAdminPage />}
-          />
-          <Route
-            index
             path="/dashboard/listMedicalRecord"
-            element={<DashboardAdminPage />}
+            element={<ListMedicalRecordPage />}
           />
         </Route>
       )}
