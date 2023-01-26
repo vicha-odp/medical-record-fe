@@ -22,10 +22,13 @@ const LogoutButton: React.FC = () => {
   };
 
   return (
-    <button className="bg-red-500 px-3 py-1.5 rounded-lg" onClick={onClick}>
+    <button
+      className="bg-white px-3 py-1.5 rounded-lg border-2 border-red-500"
+      onClick={onClick}
+    >
       <Text
         value="Log out"
-        className={clsx('text-sm font-medium text-white')}
+        className={clsx('text-sm font-medium text-red-500')}
       />
     </button>
   );
@@ -37,25 +40,25 @@ const AdminMenu = () => {
       <Link to="/dashboard/listAdmin">
         <Text
           value="Admin"
-          className={clsx('text-sm font-medium text-left text-neutral-500')}
+          className={clsx('text-sm font-medium text-left text-neutral-700')}
         />
       </Link>
       <Link to="/dashboard/listPatient">
         <Text
           value="Patient"
-          className={clsx('text-sm font-medium text-left text-neutral-500')}
+          className={clsx('text-sm font-medium text-left text-neutral-700')}
         />
       </Link>
       <Link to="/dashboard/listDoctor">
         <Text
           value="Doctor"
-          className={clsx('text-sm font-medium text-left text-neutral-500')}
+          className={clsx('text-sm font-medium text-left text-neutral-700')}
         />
       </Link>
       <Link to="/dashboard/listMedicalRecord">
         <Text
           value="Medical Record"
-          className={clsx('text-sm font-medium text-left text-neutral-500')}
+          className={clsx('text-sm font-medium text-left text-neutral-700')}
         />
       </Link>
     </div>
@@ -68,13 +71,13 @@ const PatientMenu = () => {
       <Link to="/dashboard/listAdmin">
         <Text
           value="Doctor"
-          className={clsx('text-sm font-medium text-left text-neutral-500')}
+          className={clsx('text-sm font-medium text-left text-neutral-700')}
         />
       </Link>
       <Link to="/dashboard/listPatient">
         <Text
           value="Medical Record"
-          className={clsx('text-sm font-medium text-left text-neutral-500')}
+          className={clsx('text-sm font-medium text-left text-neutral-700')}
         />
       </Link>
     </div>
@@ -87,13 +90,13 @@ const DoctorMenu = () => {
       <Link to="/dashboard/listAdmin">
         <Text
           value="Patient"
-          className={clsx('text-sm font-medium text-left text-neutral-500')}
+          className={clsx('text-sm font-medium text-left text-neutral-700')}
         />
       </Link>
       <Link to="/dashboard/listPatient">
         <Text
           value="Medical Record"
-          className={clsx('text-sm font-medium text-left text-neutral-500')}
+          className={clsx('text-sm font-medium text-left text-neutral-700')}
         />
       </Link>
     </div>
@@ -109,14 +112,14 @@ const Header = () => {
   );
 
   return (
-    <div className="sticky top-0 w-full h-[80px] bg-neutral-200 flex justify-center items-center">
+    <div className="sticky top-0 w-full h-[80px] bg-sky-100 flex justify-center items-center">
       <Container>
         <div className="flex flex-row items-center justify-between">
           <div className="flex flex-row items-center gap-[20px]">
             <Link to="/dashboard">
               <Text
                 value="Medical Record App"
-                className={clsx('text-xl font-bold text-left text-neutral-700')}
+                className={clsx('text-xl font-bold text-left text-sky-500')}
               />
             </Link>
 
@@ -127,7 +130,7 @@ const Header = () => {
           <div className={clsx('flex flex-row gap-[30px] items-center')}>
             <Text
               value={authData.role}
-              className={clsx('text-sm font-bold text-left text-red-500')}
+              className={clsx('text-sm font-bold text-left text-sky-500')}
             />
             <Text
               value={authData.name}

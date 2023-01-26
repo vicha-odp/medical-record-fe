@@ -2,8 +2,17 @@ import React, { useMemo } from 'react';
 import List from '../../components/List/List';
 import ChildList from '../../components/List/ChildList';
 import { getDoctor } from '../../services/express';
+import LoginStore from '../../store/login';
+import { shallow } from 'zustand/shallow';
 
 const ListDoctor: React.FC = () => {
+  const { authData } = LoginStore.useLoginPersistStore(
+    (state) => ({
+      authData: state.authData,
+    }),
+    shallow
+  );
+
   const { data: doctor } = getDoctor();
 
   const doctorData = useMemo(() => {

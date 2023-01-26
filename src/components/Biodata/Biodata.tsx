@@ -13,19 +13,19 @@ const Biodata: React.FC<TBiodata> = ({ govId, name, email, role }) => {
       <div className="flex flex-col gap-[10px]">
         <Text
           value={role}
-          className={clsx('text-xl font-semibold text-left text-red-400')}
+          className={clsx('text-xl font-semibold text-left text-sky-500')}
         />
         <Text
           value={govId}
-          className={clsx('text-xl font-semibold text-left text-neutral-700')}
+          className={clsx('text-xl font-normal text-left text-neutral-700')}
         />
         <Text
           value={name}
-          className={clsx('text-xl font-semibold text-left text-neutral-700')}
+          className={clsx('text-xl font-normal text-left text-neutral-700')}
         />
         <Text
           value={email}
-          className={clsx('text-xl font-semibold text-left text-neutral-700')}
+          className={clsx('text-xl font-normal text-left text-neutral-700')}
         />
       </div>
     </div>
