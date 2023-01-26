@@ -92,7 +92,7 @@ export const postMedicalRecord = (mutationOpt?: TMutationOptions) => {
 export const getAdmin = (queryOptions?: TQueryOptions, govId?: string) => {
   const { data, isLoading, isError, refetch, isFetching } = useQuery(
     [`getAdmin${govId ? `/${govId}` : ''}`],
-    client(`/userService/admin/getAdmin/${govId ? `/${govId}` : ''}`),
+    client(`/userService/admin/getAdmin/${govId ? `${govId}` : ''}`),
     queryOptions
   );
 
@@ -108,7 +108,7 @@ export const getAdmin = (queryOptions?: TQueryOptions, govId?: string) => {
 export const getPatient = (queryOptions?: TQueryOptions, govId?: string) => {
   const { data, isLoading, isError, refetch, isFetching } = useQuery(
     [`getPatient${govId ? `/${govId}` : ''}`],
-    client(`/userService/patient/getPatient/${govId ? `/${govId}` : ''}`),
+    client(`/userService/patient/getPatient/${govId ? `${govId}` : ''}`),
     queryOptions
   );
 
@@ -124,7 +124,7 @@ export const getPatient = (queryOptions?: TQueryOptions, govId?: string) => {
 export const getDoctor = (queryOptions?: TQueryOptions, govId?: string) => {
   const { data, isLoading, isError, refetch, isFetching } = useQuery(
     [`getDoctor${govId ? `/${govId}` : ''}`],
-    client(`/userService/doctor/getDoctor/${govId ? `/${govId}` : ''}`),
+    client(`/userService/doctor/getDoctor/${govId ? `${govId}` : ''}`),
     queryOptions
   );
 
