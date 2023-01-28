@@ -161,6 +161,7 @@ const Login: React.FC = () => {
           name: doctorData?.name,
           email: doctorData?.email,
           password: doctorData?.password,
+          categoryName: doctorData?.categoryName,
         });
         setError('');
       } else {
