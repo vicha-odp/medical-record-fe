@@ -68,13 +68,13 @@ const AdminMenu = () => {
 const PatientMenu = () => {
   return (
     <div className="pl-[10px] flex flex-row gap-[30px] items-center">
-      <Link to="/dashboard/listAdmin">
+      <Link to="/dashboard/listDoctor">
         <Text
           value="Doctor"
           className={clsx('text-sm font-medium text-left text-neutral-700')}
         />
       </Link>
-      <Link to="/dashboard/listPatient">
+      <Link to="/dashboard/listMedicalRecord">
         <Text
           value="Medical Record"
           className={clsx('text-sm font-medium text-left text-neutral-700')}
@@ -87,13 +87,13 @@ const PatientMenu = () => {
 const DoctorMenu = () => {
   return (
     <div className="pl-[10px] flex flex-row gap-[30px] items-center">
-      <Link to="/dashboard/listAdmin">
+      <Link to="/dashboard/listPatient">
         <Text
           value="Patient"
           className={clsx('text-sm font-medium text-left text-neutral-700')}
         />
       </Link>
-      <Link to="/dashboard/listPatient">
+      <Link to="/dashboard/listMedicalRecord">
         <Text
           value="Medical Record"
           className={clsx('text-sm font-medium text-left text-neutral-700')}

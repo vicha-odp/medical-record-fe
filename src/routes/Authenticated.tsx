@@ -61,6 +61,11 @@ const Authenticated: React.FC = () => {
             path="/dashboard/patient"
             element={<DashboardAdminPage />}
           />
+          <Route path="/dashboard/listDoctor" element={<ListDoctorPage />} />
+          <Route
+            path="/dashboard/listMedicalRecord"
+            element={<ListMedicalRecordPage />}
+          />
         </Route>
       )}
       {authData.role === 'Doctor' && (
@@ -73,6 +78,11 @@ const Authenticated: React.FC = () => {
             index
             path="/dashboard/doctor"
             element={<DashboardAdminPage />}
+          />
+          <Route path="/dashboard/listPatient" element={<ListPatientPage />} />
+          <Route
+            path="/dashboard/listMedicalRecord"
+            element={<ListMedicalRecordPage />}
           />
         </Route>
       )}
