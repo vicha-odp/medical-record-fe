@@ -97,12 +97,12 @@ const Login: React.FC = () => {
   }, [admin]);
 
   const patientData = useMemo(() => {
-    const data = admin?.data?.data;
+    const data = patient?.data?.data;
     return data ? data : null;
   }, [patient]);
 
   const doctorData = useMemo(() => {
-    const data = admin?.data?.data;
+    const data = doctor?.data?.data;
     return data ? data : null;
   }, [doctor]);
 
@@ -132,7 +132,9 @@ const Login: React.FC = () => {
       } else {
         setError('Password salah');
       }
-    } else if (loginParams.role === 'Patient' && patient.data.code === 200) {
+    }
+
+    if (loginParams.role === 'Patient' && patient.data.code === 200) {
       if (loginParams.password === patientData?.password) {
         setIsAuthenticated(true);
         setAuthData({
@@ -147,7 +149,9 @@ const Login: React.FC = () => {
       } else {
         setError('Password salah');
       }
-    } else if (loginParams.role === 'Doctor' && doctor.data.code === 200) {
+    }
+
+    if (loginParams.role === 'Doctor' && doctor.data.code === 200) {
       if (loginParams.password === doctorData?.password) {
         setIsAuthenticated(true);
         setAuthData({
@@ -162,8 +166,6 @@ const Login: React.FC = () => {
       } else {
         setError('Password salah');
       }
-    } else {
-      setError('NIK atau Password salah');
     }
   };
 
