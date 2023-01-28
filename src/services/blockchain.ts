@@ -10,7 +10,7 @@ export const postPatientBlockchain = (mutationOpt?: TMutationOptions) => {
         body: importBody,
       };
 
-      const fetch = client('/api/v1/transaction', options);
+      const fetch = client('/bc/addPatient', options);
       return fetch();
     },
     mutationOpt
@@ -31,7 +31,7 @@ export const postDoctorBlockchain = (mutationOpt?: TMutationOptions) => {
         body: importBody,
       };
 
-      const fetch = client('/api/v1/transaction', options);
+      const fetch = client('/bc/addDoctor', options);
       return fetch();
     },
     mutationOpt
@@ -52,7 +52,7 @@ export const postMedicalRecordBlockchain = (mutationOpt?: TMutationOptions) => {
         body: importBody,
       };
 
-      const fetch = client('/api/v1/transaction', options);
+      const fetch = client('/bc/addMedicalRecord', options);
       return fetch();
     },
     mutationOpt
@@ -65,50 +65,65 @@ export const postMedicalRecordBlockchain = (mutationOpt?: TMutationOptions) => {
   };
 };
 
-export const getPatientBlockchain = (queryOptions?: TQueryOptions) => {
-  const { data, isLoading, isError, refetch, isFetching } = useQuery(
-    ['getPatientBlockchain'],
-    client('/api/v1/event/past'),
-    queryOptions
+export const getPatientBlockchain = (mutationOpt?: TMutationOptions) => {
+  const { isLoading, isError, mutate } = useMutation(
+    async (importBody: any) => {
+      const options = {
+        method: 'POST',
+        body: importBody,
+      };
+
+      const fetch = client('/bc/getPatient', options);
+      return fetch();
+    },
+    mutationOpt
   );
 
   return {
-    data,
     isLoading,
     isError,
-    refetch,
-    isFetching,
+    mutate,
   };
 };
 
-export const getDoctorBlockchain = (queryOptions?: TQueryOptions) => {
-  const { data, isLoading, isError, refetch, isFetching } = useQuery(
-    ['getDoctorBlockchain'],
-    client('/api/v1/event/past'),
-    queryOptions
+export const getDoctorBlockchain = (mutationOpt?: TMutationOptions) => {
+  const { isLoading, isError, mutate } = useMutation(
+    async (importBody: any) => {
+      const options = {
+        method: 'POST',
+        body: importBody,
+      };
+
+      const fetch = client('/bc/getDoctor', options);
+      return fetch();
+    },
+    mutationOpt
   );
 
   return {
-    data,
     isLoading,
     isError,
-    refetch,
-    isFetching,
+    mutate,
   };
 };
 
-export const getMedicalRecordBlockchain = (queryOptions?: TQueryOptions) => {
-  const { data, isLoading, isError, refetch, isFetching } = useQuery(
-    ['getMedicalRecordBlockchain'],
-    client('/api/v1/event/past'),
-    queryOptions
+export const getMedicalRecordBlockchain = (mutationOpt?: TMutationOptions) => {
+  const { isLoading, isError, mutate } = useMutation(
+    async (importBody: any) => {
+      const options = {
+        method: 'POST',
+        body: importBody,
+      };
+
+      const fetch = client('/bc/getMedicalRecord', options);
+      return fetch();
+    },
+    mutationOpt
   );
 
   return {
-    data,
     isLoading,
     isError,
-    refetch,
-    isFetching,
+    mutate,
   };
 };
