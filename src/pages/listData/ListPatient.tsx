@@ -371,9 +371,7 @@ const ListPatient: React.FC = () => {
         value="Patient Section"
         className={clsx('text-3xl font-bold text-left text-neutral-700')}
       />
-      {(authData.role === 'Admin' || authData.role === 'Doctor') && (
-        <SectionCreatePatient />
-      )}
+      {authData.role === 'Admin' && <SectionCreatePatient />}
       <div className={clsx('my-[30px]')}>
         <Text
           value="List Patient Backend"
