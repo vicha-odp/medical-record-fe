@@ -19,13 +19,13 @@ const SectionGetDoctorBlockchain: React.FC = () => {
     error: '',
   };
 
-  const defaultDataDoctor = {
-    drName: '',
-    drSpecialist: '',
+  const defaultDataMedicalRecord = {
+    data: '',
   };
 
-  const [dataDoctor, setDataDoctor] =
-    useState<typeof defaultDataDoctor>(defaultDataDoctor);
+  const [dataMedicalRecord, setDataMedicalRecord] = useState<
+    typeof defaultDataMedicalRecord
+  >(defaultDataMedicalRecord);
   const [status, setStatus] = useState<typeof defaultStatus>(defaultStatus);
   const [doctorParams, setDoctorParams] = useState<string>('');
 
@@ -34,7 +34,7 @@ const SectionGetDoctorBlockchain: React.FC = () => {
       onSuccess(res) {
         setStatus({ ...status, success: 'Data ditemukan!' });
 
-        setDataDoctor(JSON.parse(JSON.stringify(res.data)).data);
+        setDataMedicalRecord(JSON.parse(JSON.stringify(res.data)));
 
         setTimeout(() => {
           setStatus(defaultStatus);
@@ -115,15 +115,11 @@ const SectionGetDoctorBlockchain: React.FC = () => {
         </div>
       </div>
       <div>
-        {dataDoctor && (
+        {dataMedicalRecord && (
           <div className="flex flex-col gap-[10px]">
             <Text
-              value={dataDoctor.drName}
+              value={dataMedicalRecord.data}
               className={clsx('text-xl font-semibold text-left text-sky-500')}
-            />
-            <Text
-              value={dataDoctor.drSpecialist}
-              className={clsx('text-xl font-normal text-left text-neutral-700')}
             />
           </div>
         )}
