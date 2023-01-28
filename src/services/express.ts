@@ -137,10 +137,13 @@ export const getDoctor = (queryOptions?: TQueryOptions, govId?: string) => {
   };
 };
 
-export const getMedicalRecord = (queryOptions?: TQueryOptions) => {
+export const getMedicalRecord = (
+  queryOptions?: TQueryOptions,
+  fetchOption?: any
+) => {
   const { data, isLoading, isError, refetch, isFetching } = useQuery(
     ['getMedicalRecord'],
-    client('/medicalRecordService/medicalRecord'),
+    client('/medicalRecordService/medicalRecord', fetchOption),
     queryOptions
   );
 
