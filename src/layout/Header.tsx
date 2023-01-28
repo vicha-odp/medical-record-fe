@@ -112,7 +112,7 @@ const Header = () => {
   );
 
   return (
-    <div className="sticky top-0 w-full h-[80px] bg-sky-100 flex justify-center items-center">
+    <div className="sticky top-0 w-full min-h-[80px] max-h-[80px] bg-sky-100 flex justify-center items-center">
       <Container>
         <div className="flex flex-row items-center justify-between">
           <div className="flex flex-row items-center gap-[20px]">
