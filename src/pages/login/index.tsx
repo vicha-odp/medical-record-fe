@@ -119,7 +119,6 @@ const Login: React.FC = () => {
   const onSubmit = () => {
     if (loginParams.role === 'Admin' && admin.data.code === 200) {
       if (loginParams.password === adminData?.password) {
-        console.log('authenticated');
         setIsAuthenticated(true);
         setAuthData({
           ...authData,
@@ -135,7 +134,6 @@ const Login: React.FC = () => {
       }
     } else if (loginParams.role === 'Patient' && patient.data.code === 200) {
       if (loginParams.password === patientData?.password) {
-        console.log('authenticated');
         setIsAuthenticated(true);
         setAuthData({
           ...authData,
@@ -151,7 +149,6 @@ const Login: React.FC = () => {
       }
     } else if (loginParams.role === 'Doctor' && doctor.data.code === 200) {
       if (loginParams.password === doctorData?.password) {
-        console.log('authenticated');
         setIsAuthenticated(true);
         setAuthData({
           ...authData,

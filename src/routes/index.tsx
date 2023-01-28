@@ -13,8 +13,6 @@ const Routes: React.FC = () => {
     shallow
   );
 
-  console.log(isAuthenticated);
-
   return (
     <Router>{isAuthenticated ? <Authenticated /> : <Unauthenticated />}</Router>
   );
